@@ -21,23 +21,20 @@
                 <img src="./assets-2/logo.2c489fc453a1783cbadacf914efa3df6.svg" alt="logo">
                 <span class="logo-name">Treact</span>
                </div>
-               <div class="nav__links">
-                <ul class="nav__menu">
-        <li><a href="#about">About</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-        <li><a href="#login">Login</a></li>
-                </ul>
-                
-                <button class="both-signup btn btn__primary" onclick="openMenu()">Get Started</button>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="btn__menu--svg">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
+            
+                <ul class="nav__menu" id="navMenu">
+        <li><a href="#about"class="nav__link">About</a></li>
+        <li><a href="#blog"class="nav__link">Blog</a></li>
+        <li><a href="#pricing"class="nav__link">Pricing</a></li>
+        <li><a href="#contact"class="nav__link">Contact Us</a></li>
+        <li><a href="#login"class="nav__link">Login</a></li>
+                <li><a href="#" class="btn btn__primary">Sign Up</a></li>
+    </ul>
+    <button class="btn__menu" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
               </div>
             </div>
             </div>
@@ -375,7 +372,6 @@
                         </div>
                         
                         <div class="footer__column">
-                        <h4 class="footer__column--title">TEAM</h4>
                         <a href="#" class="footer__link">Career</a> 
                         <a href="#" class="footer__link">Founders</a> 
                         <a href="#" class="footer__link">Culture</a> 
