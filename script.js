@@ -1,3 +1,7 @@
+function toggleMenu() {
+    document.body.classList.toggle("menu--open");
+}
+
 function openMenu() {
     document.body.classList.add("menu--open");
 }
@@ -5,4 +9,3 @@ function openMenu() {
 function closeMenu() {
     document.body.classList.remove("menu--open");
 }
-onclick="toggleMenu()"
