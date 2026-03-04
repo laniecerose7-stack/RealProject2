@@ -201,8 +201,9 @@ header .row {
 }
 
 .header__input {
+    position: relative;
     display: flex;
-    gap: 12px;
+    gap: 0; /* remove gap since button will overlay */
     margin: 24px 0;
     align-items: center;
 }
@@ -210,6 +211,7 @@ header .row {
 .header__input input {
     flex: 1;
     padding: 14px 16px;
+    padding-right: 140px; /* make room for button inside */
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     font-size: 14px;
@@ -217,8 +219,13 @@ header .row {
 }
 
 .header__input .btn__primary {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
     white-space: nowrap;
-    padding: 14px 24px !important;
+    padding: 10px 20px;
+    margin: 0;
 }
 
 .header__title {
@@ -445,15 +452,39 @@ PRICING ↓
     margin-top: 64px;
 }
 .pricing__card{
-    flex: 1;
+    flex: 1 1 300px;
     max-width: 350px;
     background-color: #f7f7f7;
-    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    padding: 0; /* remove padding so sections control spacing */
     border-top: 6px solid transparent;
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 300ms ease;
+}
+.pricing__top,
+.pricing__middle,
+.pricing__bottom {
+    padding: 24px;
+}
+.pricing__top {
+    border-bottom: 1px solid #e2e8f0;
+}
+.pricing__middle {
+    border-bottom: 1px solid #e2e8f0;
+}
+.pricing__bottom {
+    flex-grow: 1;
+}
+
+.pricing__price {
+    margin: 0;
+}
+.pricing__period,
+.pricing__subtitle {
+    margin: 4px 0;
 }
 .pricing__card:nth-child(1){
     border-top-color: #38b2ac;
@@ -673,6 +704,11 @@ Buttons
     border-radius: 9999px;
     text-decoration: none;
 }
+
+/* ensure nav sign-up button text stays white despite .nav__menu a rule */
+.nav__menu .btn__primary {
+    color: white;
+}
 .btn__primary:hover{
     background: #5011cc;
 }
@@ -872,11 +908,12 @@ MOBILE RESPONSIVENESS ↓
         width: 100%;
     }
     #pricing .row {
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* keep cards side by side; allow wrapping */
     }
     .pricing__card{
-        width: 100%;
+        /* no forced width here; flex-basis handles sizing */
     }
 }
 
