@@ -195,6 +195,8 @@ header .row {
 }
 .header__content {
     flex: 1;
+    max-width: 700px;
+    width: 70%;
 }
 .header__img{
     flex: 1;
@@ -450,10 +452,12 @@ PRICING ↓
     gap: 32px;
     justify-content: center;
     margin-top: 64px;
+    flex-wrap: nowrap;
 }
 .pricing__card{
-    flex: 1 1 300px;
+    flex: 1;
     max-width: 350px;
+    min-width: 280px;
     background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
@@ -866,13 +870,30 @@ MOBILE RESPONSIVENESS ↓
     display: flex;
   }
 
-
-  .both-signup {
+  /* .both-signup {
     display: none;
-  }
+  } */
 
   .nav__links {
     position: relative;
+  }
+
+  .header__input {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .header__input input {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .header__input .btn__primary {
+    position: static;
+    width: 100%;
+    margin: 0;
+    display: block;
+    margin-top: 8px;
   }
 
   .features__grid {
@@ -915,6 +936,10 @@ MOBILE RESPONSIVENESS ↓
     .pricing__card{
         /* no forced width here; flex-basis handles sizing */
     }
+
+    .pricing__card--featured {
+        transform: scale(1);
+    }
 }
 
 @media(max-width: 640px) {
@@ -929,10 +954,15 @@ MOBILE RESPONSIVENESS ↓
     .pricing__cards {
         flex-direction: column;
         gap: 24px;
+        flex-wrap: nowrap;
+        align-items: center;
     }
 
     .pricing__card {
         max-width: 100%;
+        min-width: unset;
+        flex: 0;
+        width: 100%;
     }
 
     .pricing__card--featured {
@@ -953,6 +983,11 @@ MOBILE RESPONSIVENESS ↓
         max-width: 100%;
     }
 
+    .cta__buttons {
+        justify-content: center;
+        width: 100%;
+    }
+
     .footer__bottom {
         flex-direction: column;
         gap: 24px;
@@ -960,7 +995,8 @@ MOBILE RESPONSIVENESS ↓
     }
 
     .footer__links {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 32px;
     }
 
