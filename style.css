@@ -449,14 +449,14 @@ PRICING ↓
 }
 .pricing__cards{
     display: flex;
-    gap: 32px;
-    justify-content: center;
+    gap: 48px;
+    justify-content: space-between;
     margin-top: 64px;
     flex-wrap: nowrap;
 }
 .pricing__card{
     flex: 1;
-    max-width: 350px;
+    max-width: 300px;
     min-width: 280px;
     background-color: #f7f7f7;
     display: flex;
